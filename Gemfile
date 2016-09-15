@@ -10,4 +10,5 @@ end
 
 group :test do
   gem 'rspec'
+  gem 'simplecov-rcov', require: false
 end
