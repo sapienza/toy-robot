@@ -2,7 +2,7 @@
 module ToyRobot
   class CLI
     def self.hello_world
-      puts 'Hello World!'
+      'Hello World!'
     end
   end
 end
