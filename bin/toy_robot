@@ -5,4 +5,4 @@ $LOAD_PATH.push(File.join(File.dirname(__FILE__), '/../lib'))
 
 require 'toy_robot'
 
-ToyRobot::CLI.hello_world
+ToyRobot::CLI.start(ARGV)
