@@ -1,0 +1,17 @@
+defaults: &defaults
+  subject: robot
+
+place:
+  <<: *defaults
+  options:
+    - 'x'
+    - 'y'
+    - 'facing'
+move:
+  <<: *defaults
+left:
+  <<: *defaults
+right:
+  <<: *defaults
+report:
+  <<: *defaults
