@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 describe ToyRobot::NavigatorEngine do
-  let(:table) { double(x_range: 2, y_range: 2) }
+  let(:table) { double('Table', x_range: 2, y_range: 2) }
 
   subject(:navigator_engine) { described_class.new(table) }
 

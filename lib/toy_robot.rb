@@ -19,6 +19,7 @@ require 'toy_robot/parser'
 require 'toy_robot/models/compass_engine'
 require 'toy_robot/models/table'
 require 'toy_robot/models/navigator_engine'
+require 'toy_robot/models/robot'
 
 # App Constants
 APP_ROOT = File.expand_path(File.join(File.dirname(__FILE__), '..'))
