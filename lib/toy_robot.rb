@@ -14,6 +14,7 @@ require 'toy_robot/adapters/instructions_from_txt.rb'
 
 # Parser
 require 'toy_robot/parser'
+require 'toy_robot/parser_command'
 
 # Models
 require 'toy_robot/models/table'
