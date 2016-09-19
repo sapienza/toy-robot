@@ -17,7 +17,12 @@ You can have the full description of the challenge ['here'](readme/CODING_CHALLE
 * This was developed using Ruby 2.3.1, but will probably work in Ruby > 2+.
 * Terminal with bash installed or POSIX compatible term.
 
-### Setup
+### Tools used
+
+* Bundler
+* Thor
+
+### Usage / Installation
 
 Clone the project
 `$ git clone git@bitbucket.org:sapienza/toy_robot.git`
@@ -29,7 +34,11 @@ Navigate to the `toyrobot` folder and run:
 ### Usage
 
 ```bash
+$ bin/toy_robot --help
 
+Commands:
+  toy_robot execute --instructions-file=./example_data/instructions_1.txt  # executes given commands
+  toy_robot help [COMMAND]                                                 # Describe available commands or one specific command
 ```
 
 ### Running Tests
