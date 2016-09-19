@@ -56,7 +56,7 @@ module ToyRobot
     def report
       return unless @navigator_engine.on_table?
 
-      "Report: x:#{@x_position}, y:#{@y_position}, facing:#{@facing}"
+      puts "#{@x_position},#{@y_position},#{@facing}"
     end
 
     private

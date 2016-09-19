@@ -129,8 +129,7 @@ describe ToyRobot::Robot do
     it 'reports x, y and facing' do
       robot.place(x: 2, y: 3, facing: :east)
 
-      expect(robot.report)
-        .to eq('Report: x:2, y:3, facing:east')
+      expect(robot.report).to eq('2,3,east')
     end
 
     context 'when robot is not on table' do
