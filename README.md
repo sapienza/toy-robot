@@ -23,13 +23,13 @@ You can have the full description of the challenge ['here'](readme/CODING_CHALLE
 * Thor
 
 ### Documentation
-Code should be simple to understand. Methods and classes should tell you what 
-they are responsible for and what they do just by their names. 
+Code should be simple to understand. Methods and classes should tell you what
+they are responsible for and what they do just by their names.
 However, some design decisions may be a bit obscure to understand at a glance
-and when it happens, documentation can be handy for those not aware with 
+and when it happens, documentation can be handy for those not aware with
 the project and the design decisions.
 
-Some methods and classes in the conditions above are documented following 
+Some methods and classes in the conditions above are documented following
 the ['TomDoc'](tomdoc.org)
 
 ### Usage / Installation
@@ -56,7 +56,7 @@ Under config/commands.yml
 
 
 ### Running Tests
-`$ bundle exec rspec spec`
+`$ rspec`
 
 ### Test Coverage Metrics
 
@@ -67,7 +67,15 @@ Here is the current state:
 !['model'](/readme/images/coverage.png)
 
 ### Ruby static code analyzer (Rubocop).
-`$ bundle exec rubocop`
+`$ rubocop`
+
+### Cyclomatic complexity
+
+To run Cyclomatic complexity tool (Rubycritic).
+`$ rubycritic`
+
+Here is the current state:
+!['model'](/readme/images/cyclomatic_complexity.png)
 
 ## Contributing
 

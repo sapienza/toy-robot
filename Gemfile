@@ -8,7 +8,8 @@ gem 'thor' # CLI control
 
 group :development, :test do
   gem 'byebug' # Debug
-  gem 'rubocop' # Static analysis of the code
+  gem 'rubocop', require: false # Static analysis of the code
+  gem 'rubycritic', require: false # Cyclomatic complexity
 end
 
 group :test do
