@@ -47,8 +47,16 @@ Navigate to the `toyrobot` folder and run:
 $ bin/toy_robot --help
 
 Commands:
-  bin/toy_robot execute --instructions-file=./example_data/instructions_1.txt  # executes given commands
-  bin/toy_robot help [COMMAND]                                                 # Describe available commands or one specific command
+  toy_robot execute --instructions-file=./example_data/instructions_1.txt  # executes given commands
+  toy_robot help [COMMAND]                                                 # Describe available commands or one specific command
+```
+
+### Using the example data
+
+```bash
+$ bin/toy_robot execute --instructions-file=./example_data/instructions_1.txt
+$ bin/toy_robot execute --instructions-file=./example_data/instructions_2.txt
+$ bin/toy_robot execute --instructions-file=./example_data/instructions_3.txt
 ```
 
 ### Commands Accepted and its options
