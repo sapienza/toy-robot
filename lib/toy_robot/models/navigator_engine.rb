@@ -28,7 +28,7 @@ module ToyRobot
     end
 
     def on_table?
-      @robot_x_position && @robot_y_position
+      !@robot_x_position.nil? && !@robot_y_position.nil?
     end
   end
 end
