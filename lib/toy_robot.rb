@@ -16,11 +16,13 @@ require 'toy_robot/adapters/instructions_from_txt.rb'
 require 'toy_robot/parser'
 
 # Models
-require 'toy_robot/models/compass_engine'
 require 'toy_robot/models/table'
 require 'toy_robot/models/navigator_engine'
 require 'toy_robot/models/robot'
 require 'toy_robot/models/command_center'
+
+# Singletons
+require 'toy_robot/singletons/compass_engine'
 
 # App Constants
 APP_ROOT = File.expand_path(File.join(File.dirname(__FILE__), '..'))
