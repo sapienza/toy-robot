@@ -55,7 +55,7 @@ module ToyRobot
           end
 
           options_hash = Hash[options.each_with_index.map do |value, index|
-            [COMMANDS[command]['options'][index], value]
+            [COMMANDS[command]['options'][index].to_sym, value]
           end]
         else
           command = instruction
@@ -65,9 +65,9 @@ module ToyRobot
           raise InvalidCommandError, "Invalid command: #{command}"
         end
 
-        subject = COMMANDS[command]['subject']
+        subject = COMMANDS[command]['subject'].to_sym
 
-        collection << { command: command, options: options_hash, subject: subject }
+        collection << { command: command.to_sym, options: options_hash, subject: subject }
       end
 
       collection

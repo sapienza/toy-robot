@@ -7,7 +7,6 @@ module ToyRobot
     include Observable
 
     attr_reader :x_position, :y_position, :facing
-    attr_accessor :navigator_engine
 
     MAX_WALKING_UNIT = 1
 
@@ -19,14 +18,14 @@ module ToyRobot
     end
 
     def place(options)
-      x_position = options.fetch(:x)
-      y_position = options.fetch(:y)
+      x_position = options.fetch(:x).to_i
+      y_position = options.fetch(:y).to_i
 
       return unless @navigator_engine.valid_position?(x_position, y_position)
 
       @x_position = x_position
       @y_position = y_position
-      @facing = options.fetch(:facing)
+      @facing = options.fetch(:facing).to_sym
 
       changed && notify_observers(@x_position, @y_position)
     end
@@ -78,7 +77,7 @@ module ToyRobot
     end
 
     def walking_directions
-      @walking_directions ||= @compass_engine.walking_directions(@facing)
+      @compass_engine.walking_directions(@facing)
     end
   end
 end

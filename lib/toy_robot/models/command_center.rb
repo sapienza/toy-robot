@@ -36,7 +36,7 @@ module ToyRobot
     end
 
     def robot
-      @robot = Robot.new(compass_engine, navigator_engine)
+      @robot ||= Robot.new(compass_engine, navigator_engine)
     end
   end
 end

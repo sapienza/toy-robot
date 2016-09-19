@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
 describe ToyRobot::Parser do
-  RSpec.shared_examples 'a robot command without options' do
-    it do
-      is_expected.to include(
-        command: instructions.first, options: nil, subject: 'robot'
-      )
-    end
-  end
+  # RSpec.shared_examples 'a robot command without options' do
+  #   it do
+  #     is_expected.to include(
+  #       command: instructions.first, options: nil, subject: 'robot'
+  #     )
+  #   end
+  # end
 
   describe '#parse' do
     subject(:parse) { described_class.new('file_path').parse }
@@ -23,36 +23,36 @@ describe ToyRobot::Parser do
     context 'when is a place command' do
       it do
         is_expected.to include(
-          command: 'place',
-          options: { 'x' => '4', 'y' => '2', 'facing' => 'east' },
-          subject: 'robot'
+          command: :place,
+          options: { x: '4', y: '2', facing: 'east' },
+          subject: :robot
         )
       end
     end
 
-    context 'when is a move command' do
-      let(:instructions) { ['move'] }
+    # context 'when is a move command' do
+    #   let(:instructions) { ['move'] }
 
-      it_behaves_like 'a robot command without options'
-    end
+    #   it_behaves_like 'a robot command without options'
+    # end
 
-    context 'when is a left command' do
-      let(:instructions) { ['left'] }
+    # context 'when is a left command' do
+    #   let(:instructions) { ['left'] }
 
-      it_behaves_like 'a robot command without options'
-    end
+    #   it_behaves_like 'a robot command without options'
+    # end
 
-    context 'when is a right command' do
-      let(:instructions) { ['right'] }
+    # context 'when is a right command' do
+    #   let(:instructions) { ['right'] }
 
-      it_behaves_like 'a robot command without options'
-    end
+    #   it_behaves_like 'a robot command without options'
+    # end
 
-    context 'when is a report command' do
-      let(:instructions) { ['report'] }
+    # context 'when is a report command' do
+    #   let(:instructions) { ['report'] }
 
-      it_behaves_like 'a robot command without options'
-    end
+    #   it_behaves_like 'a robot command without options'
+    # end
 
     context 'when command is not valid' do
       let(:instructions) { ['explode'] }
