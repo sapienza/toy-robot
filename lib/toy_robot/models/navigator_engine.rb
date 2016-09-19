@@ -18,6 +18,9 @@ module ToyRobot
       @robot_y_position = y_position
     end
 
+    # Internal: validates if the robot can make the move.
+    # Valid positions are considered those inside the table
+    # zeros are considered corners thus they are allowed too.
     def valid_position?(x, y)
       !negative_positions?(x, y) && positions_inside_table?(x, y)
     end
