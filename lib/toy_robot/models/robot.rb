@@ -31,13 +31,14 @@ module ToyRobot
     end
 
     def move(walking_unit = MAX_WALKING_UNIT)
-      if !@navigator_engine.on_table? ||
-          @navigator_engine.destruction_risk?(walking_unit)
+      return unless @navigator_engine.on_table?
 
+      directions = desirable_directions(walking_unit)
+      unless @navigator_engine.valid_position?(directions[:x], directions[:y])
         return
       end
 
-      update_coordinates(walking_unit)
+      update_coordinates(directions)
     end
 
     def left
@@ -60,22 +61,36 @@ module ToyRobot
 
     private
 
-    def update_coordinates(walking_unit)
+    def walking_directions
+      @compass_engine.walking_directions(@facing)
+    end
+
+    def desirable_directions(walking_unit)
       directions = walking_directions
 
-      if directions[:x]
-        @x_position = @x_position.public_send(directions[:x], walking_unit)
-      end
+      {
+        x: x_destination(directions, walking_unit),
+        y: y_destination(directions, walking_unit)
+      }
+    end
 
-      if directions[:y]
-        @y_position = @y_position.public_send(directions[:y], walking_unit)
-      end
+    def update_coordinates(desirable_directions)
+      @x_position = desirable_directions[:x]
+      @y_position = desirable_directions[:y]
 
       changed && notify_observers(@x_position, @y_position)
     end
 
-    def walking_directions
-      @compass_engine.walking_directions(@facing)
+    def x_destination(directions, walking_unit)
+      return @x_position unless directions[:x]
+
+      @x_position.public_send(directions[:x], walking_unit)
+    end
+
+    def y_destination(directions, walking_unit)
+      return @y_position unless directions[:y]
+
+      @y_position.public_send(directions[:y], walking_unit)
     end
   end
 end

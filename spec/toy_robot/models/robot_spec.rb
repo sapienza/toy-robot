@@ -95,11 +95,21 @@ describe ToyRobot::Robot do
     context 'when robot is not on table' do
       let(:on_table) { false }
 
+      before { robot.place(x: 1, y: 0, facing: :east) }
+
       it_behaves_like 'a non-moving robot'
     end
 
     context 'when the move leads to extermination' do
-      let(:destruction_risk) { true }
+      let(:on_table) { true }
+
+      before do
+        allow(navigator_engine)
+          .to receive(:valid_position?)
+          .and_return(true, false)
+
+        robot.place(x: 1, y: 0, facing: :east)
+      end
 
       it_behaves_like 'a non-moving robot'
     end
