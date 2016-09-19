@@ -19,7 +19,7 @@ module ToyRobot
     end
 
     def valid_position?(x, y)
-      positive_positions?(x, y) && positions_inside_table?(x, y)
+      !negative_positions?(x, y) && positions_inside_table?(x, y)
     end
 
     def on_table?
@@ -28,8 +28,8 @@ module ToyRobot
 
     private
 
-    def positive_positions?(x, y)
-      x.positive? && y.positive?
+    def negative_positions?(x, y)
+      x < 0 || y < 0
     end
 
     def positions_inside_table?(x, y)
