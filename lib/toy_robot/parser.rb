@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 module ToyRobot
+  # Public: Class responsible for the commands parsing
+  #
+  # instructions_path - directory of the instructions file
   class Parser
-    # Public: Class responsible for the commands parsing
-    #
-    # instructions_path - directory of the instructions file
-    #
+
     def initialize(instructions_path, adapter: Adapters::InstructionsFromTxt)
       @instructions_path = instructions_path
       @adapter = adapter

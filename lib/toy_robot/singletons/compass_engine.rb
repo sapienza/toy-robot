@@ -3,22 +3,21 @@
 require 'singleton'
 
 module ToyRobot
+  # Internal: Responsible for cardinal points and which way to go
+
+  # It works as a simple compass:
+  ######## NORTH #################
+  # WEST ######### EAST###########
+  ######## SOUTH #################
+
+  # But can be extend such as:
+  ############ NORTH #############
+  ####### NW ########## NE #######
+  # WEST #################### EAST
+  ####### SW ########## SE #######
+  ############ SOUTH #############
   class CompassEngine
     include Singleton
-
-    # Internal: Responsible for cardinal points and which way to go
-
-    # It works as a simple compass:
-    ######## NORTH #################
-    # WEST ######### EAST###########
-    ######## SOUTH #################
-
-    # But can be extend such as:
-    ############ NORTH #############
-    ####### NW ########## NE #######
-    # WEST #################### EAST
-    ####### SW ########## SE #######
-    ############ SOUTH #############
 
     # Internal: information about which is the next or previous
     # cardinal point following a counterclockwise direction
