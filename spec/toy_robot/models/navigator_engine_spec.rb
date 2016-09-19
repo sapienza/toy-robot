@@ -19,28 +19,6 @@ describe ToyRobot::NavigatorEngine do
     end
   end
 
-  describe '#destruction_risk?' do
-    context 'when the next steps lead to descrution' do
-      before do
-        navigator_engine.update(2, 2)
-      end
-
-      subject(:destruction_risk?) { navigator_engine.destruction_risk?(1) }
-
-      it { is_expected.to be_truthy }
-    end
-
-    context 'when the next steps do not lead to descrution' do
-      before do
-        navigator_engine.update(1, 1)
-      end
-
-      subject(:destruction_risk?) { navigator_engine.destruction_risk?(1) }
-
-      it { is_expected.to be_falsey }
-    end
-  end
-
   describe '#on_table?' do
     subject(:on_table?) { navigator_engine.on_table? }
 
