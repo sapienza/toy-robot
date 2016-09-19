@@ -61,16 +61,14 @@ module ToyRobot
     private
 
     def update_coordinates(walking_unit)
-      if walking_directions[:x]
-        operator = walking_directions[:x]
+      directions = walking_directions
 
-        @x_position = @x_position.public_send(operator, walking_unit)
+      if directions[:x]
+        @x_position = @x_position.public_send(directions[:x], walking_unit)
       end
 
-      if walking_directions[:y]
-        operator = walking_directions[:y]
-
-        @y_position = @y_position.public_send(operator, walking_unit)
+      if directions[:y]
+        @y_position = @y_position.public_send(directions[:y], walking_unit)
       end
 
       changed && notify_observers(@x_position, @y_position)
