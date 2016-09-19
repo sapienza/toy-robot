@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 describe ToyRobot::Robot do
   RSpec.shared_examples 'a turning' do
     it 'turns the robot' do

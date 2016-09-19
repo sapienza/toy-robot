@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 describe ToyRobot::Table do
   describe '#initialize' do
     it 'validates table size' do
