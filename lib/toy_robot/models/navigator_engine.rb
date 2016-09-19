@@ -29,7 +29,7 @@ module ToyRobot
     private
 
     def negative_positions?(x, y)
-      x < 0 || y < 0
+      x.negative? || y.negative?
     end
 
     def positions_inside_table?(x, y)

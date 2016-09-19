@@ -5,7 +5,6 @@ module ToyRobot
   #
   # instructions_path - directory of the instructions file
   class Parser
-
     def initialize(instructions_path, adapter: Adapters::InstructionsFromTxt)
       @instructions_path = instructions_path
       @adapter = adapter
@@ -34,10 +33,8 @@ module ToyRobot
 
     private
 
-    attr_reader :adapter, :instructions_path
-
     def instructions_array
-      adapter.new(instructions_path).execute
+      @adapter.new(@instructions_path).execute
     end
   end
 end

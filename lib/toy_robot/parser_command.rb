@@ -35,8 +35,6 @@ module ToyRobot
 
     private
 
-    attr_reader :instruction
-
     def subject
       COMMANDS[instruction_name]['subject']
     end
@@ -62,7 +60,7 @@ module ToyRobot
     end
 
     def instruction_name
-      options? ? splitted_instructions[0] : instruction
+      options? ? splitted_instructions[0] : @instruction
     end
 
     def instructions_options
@@ -70,11 +68,11 @@ module ToyRobot
     end
 
     def splitted_instructions
-      instruction.gsub(/\s+/m, ':').strip.split(':')
+      @instruction.gsub(/\s+/m, ':').strip.split(':')
     end
 
     def options?
-      instruction.match(/\s/)
+      @instruction.match(/\s/)
     end
   end
 end
