@@ -5,7 +5,7 @@ module ToyRobot
 
   class Table
     attr_accessor :robot
-    attr_reader :x_range, :y_range
+    attr_reader :x_range, :y_range, :holes
 
     def initialize(options)
       x_range = options.fetch(:x_range)
@@ -15,12 +15,17 @@ module ToyRobot
 
       @x_range = x_range
       @y_range = y_range
+      @holes = []
     end
 
     def validate_position!(x_range, y_range)
       unless x_range.positive? && y_range.positive?
         raise InvalidTableSize, 'Table sizes have to be bigger than 0'
       end
+    end
+
+    def add_holes(holes)
+      @holes += holes
     end
   end
 end
