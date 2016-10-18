@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 describe ToyRobot::NavigatorEngine do
-  let(:table) { double('Table', x_range: 2, y_range: 2) }
+  let(:table) do
+    double('Table', x_range: 2, y_range: 2, holes: [{x:1, y:2}])
+  end
 
   subject(:navigator_engine) { described_class.new(table) }
 
@@ -16,6 +18,12 @@ describe ToyRobot::NavigatorEngine do
       subject(:valid_position?) { navigator_engine.valid_position?(2, 2) }
 
       it { is_expected.to be_truthy }
+    end
+
+    context 'when there is a hole' do
+      subject(:valid_position?) { navigator_engine.valid_position?(2, 2) }
+
+      it { is_expected.to be_falsey }
     end
   end
 
