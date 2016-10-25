@@ -28,32 +28,6 @@ module ToyRobot
     def on_table?
       !@robot_x_position.nil? && !@robot_y_position.nil?
     end
-
-    def viable_route?(x, y, visited = [])
-      return visit(0, 0)
-
-    end
-
-    def visit(x_, y_, visited = [])
-      visited << {x: x_, y: y_}
-
-      if x_ == x && y_ == y
-        return true
-      end
-
-      moves = possible_moves(x_, y_, visited)
-
-      moves.each do |move|
-        visit(move[:x], move[:y], visited)
-      end
-
-      false
-    end
-
-    def possible_moves(x, y, visited)
-      #
-    end
-
     private
 
     def hole?(x, y)

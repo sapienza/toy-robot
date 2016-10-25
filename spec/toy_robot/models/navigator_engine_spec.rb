@@ -27,25 +27,6 @@ describe ToyRobot::NavigatorEngine do
     end
   end
 
-  describe '#viable_route?' do
-    let(:table) { ToyRobot::Table.new(x_range:4, y_range:4) }
-
-    before do
-      table.add_holes(
-        [
-          {x: 2, y: 1 },
-          {x:2, y:2 },
-          {x:2, y:3 },
-          {x:3, y: 2 }
-        ]
-      )
-    end
-
-    it 'returns true if there is a viable route' do
-      expect(navigator_engine.viable_route?(3, 2)).to be_falsey
-    end
-  end
-
   describe '#on_table?' do
     subject(:on_table?) { navigator_engine.on_table? }
 
