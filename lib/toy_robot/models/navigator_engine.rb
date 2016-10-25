@@ -22,17 +22,14 @@ module ToyRobot
     # Valid positions are considered those inside the table
     # zeros are considered corners thus they are allowed too.
     def valid_position?(x, y)
-      !negative_positions?(x, y) && positions_inside_table?(x, y) && !hole?(x, y)
+      !negative_positions?(x, y) && positions_inside_table?(x, y)
     end
 
     def on_table?
       !@robot_x_position.nil? && !@robot_y_position.nil?
     end
-    private
 
-    def hole?(x, y)
-      @table.holes.include?({x: x, y: y})
-    end
+    private
 
     def negative_positions?(x, y)
       x.negative? || y.negative?
