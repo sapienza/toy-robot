@@ -19,6 +19,15 @@ module ToyRobot
   class CompassEngine
     include Singleton
 
+    COORDINATES = {
+      north: { y: :+ },
+      east: { x: :+ },
+      south: { y: :- },
+      west: { x: :- }
+    }.freeze
+
+    private_constant :COORDINATES
+
     # Internal: information about which is the next or previous
     # cardinal point following a counterclockwise direction
     #
@@ -76,13 +85,6 @@ module ToyRobot
     end
 
     private
-
-    COORDINATES = {
-      north: { y: :+ },
-      east: { x: :+ },
-      south: { y: :- },
-      west: { x: :- }
-    }.freeze
 
     def right_cardinal_index(current_direction)
       current_index(current_direction) + 1

@@ -28,11 +28,11 @@ module ToyRobot
     end
 
     def navigator_engine
-      @navigator_engine = NavigatorEngine.new(@table)
+      NavigatorEngine.new(@table)
     end
 
     def compass_engine
-      @compass_engine = CompassEngine.instance
+      CompassEngine.instance
     end
 
     def robot
